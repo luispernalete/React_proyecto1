@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "title": "primera task",
+        "description":"limpiar el patio",
+        "done": false
+    },
+    {
+        "id": 1,
+        "title": "segunda task",
+        "description":"limpiar el patio",
+        "done": false
+    },
+    {
+        "id": 2,
+        "title": "tercera task",
+        "description":"limpiar el patio",
+        "done": false
+    },
+    {
+        "id": 3,
+        "title": "cuarta task",
+        "description":"limpiar el patio",
+        "done": false
+    }
+]
