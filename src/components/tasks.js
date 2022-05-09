@@ -1,18 +1,16 @@
 import React from 'react';
+import Task from './task'
 
 
-
-class task extends React.Component {
+class tasks extends React.Component {
 
     render(){
         return this.props.tasks.map(elem =>
-            <p key = {elem.id}>
-             {elem.title} - {elem.description} - {elem.done}  - {elem.id}
-            </p>
+            <Task key = {elem.id} task={elem}/>
             )
     }
 }
 
 
 
-export default task;
+export default tasks;
