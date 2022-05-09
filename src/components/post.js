@@ -9,18 +9,28 @@ export default class post extends Component {
     async componentDidMount(){
 
         const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const json = await res.json();
+        const data = await res.json();
 
-        this.setState({
-            posts: json
-        })
+        this.setState({posts: data});
        
+        //console.log("posts: ",this.state.posts)
 
     }
   render() {
     return( 
          <div> 
-           
+           <h1>Posts</h1>
+          {
+          this.state.posts.map((post) => 
+            {
+             return(
+              <div key={post.id}> 
+              <h1>{post.title}</h1>
+              <p>{post.body}</p>
+              </div> 
+              )
+          })
+          }
         </div> 
     )
   }

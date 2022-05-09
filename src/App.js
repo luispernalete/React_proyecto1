@@ -2,11 +2,13 @@
 import './App.css';
 import React from 'react';
 import task from './example/task.json'
+import {BrowserRouter , Route , Routes} from 'react-router-dom'
 
 //componenetes
 import Tasks from './components/tasks'
 import TasksForm from './components/taskform'
 import Post from './components/post'
+
 
 class App extends React.Component {
   state = {
@@ -66,13 +68,34 @@ checkdone = (id) => {
 render(){
 
  return <div>
-     <TasksForm addtask={this.addtask}/>
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" 
+    render={() => {
+    return (
+    <div>
+    <TasksForm addtask={this.addtask} />
     <Tasks 
     checkdone = {this.checkdone} 
     metodoeliminar={this.deletetask} 
-    tasks={this.state.task}/>
-      <Post/>
+    tasks={this.state.task} />
+    </div>)
+      }}></Route></Routes>
+ 
+
+      <Route path="/post" component={Post}>
+
+      </Route>
+
+  </BrowserRouter>
+
+   
+    
+
+
    </div>
+
+
 }
 }
 
