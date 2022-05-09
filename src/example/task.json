@@ -3,24 +3,24 @@
         "id": 0,
         "title": "primera task",
         "description":"limpiar el patio",
-        "done": false
+        "done": true
     },
     {
         "id": 1,
         "title": "segunda task",
-        "description":"limpiar el patio",
-        "done": false
+        "description":"organizar ropa",
+        "done": true
     },
     {
         "id": 2,
         "title": "tercera task",
-        "description":"limpiar el patio",
+        "description":"estudiar programacion",
         "done": false
     },
     {
         "id": 3,
         "title": "cuarta task",
-        "description":"limpiar el patio",
+        "description":"cocinar",
         "done": false
     }
 ]

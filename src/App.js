@@ -2,19 +2,76 @@
 import './App.css';
 import React from 'react';
 import task from './example/task.json'
+
+//componenetes
 import Tasks from './components/tasks'
+import TasksForm from './components/taskform'
+import Post from './components/post'
 
 class App extends React.Component {
   state = {
     task: task
   }
 
+addtask = (title,descripcion) => {
+console.log("agregando task");
+
+  const newtask = {
+    title: title,
+    description: descripcion,
+    id: this.state.task.length
+  }
+
+this.setState({
+  task: [...this.state.task, newtask]
+})
+
+}
+
+deletetask = (id) => {
+
+  
+
+const newtaskfiltadas = this.state.task.filter(task => task.id !== id)
+
+
+console.log(newtaskfiltadas)
+
+this.setState(
+  {
+    task: newtaskfiltadas
+  }
+)
+
+}
+
+checkdone = (id) => {
+  const newtask = this.state.task.map(task => {
+    if (task.id === id){
+      task.done = !task.done
+    }
+
+    return task
+
+  } )
+  
+  this.setState(
+    {
+      task: newtask
+    }
+  )
+
+}
+
 render(){
 
  return <div>
-   {
-     <Tasks tasks={this.state.task}/>
-   }
+     <TasksForm addtask={this.addtask}/>
+    <Tasks 
+    checkdone = {this.checkdone} 
+    metodoeliminar={this.deletetask} 
+    tasks={this.state.task}/>
+      <Post/>
    </div>
 }
 }

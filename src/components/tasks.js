@@ -1,16 +1,21 @@
 import React from 'react';
 import Task from './task'
+import PropTypes from 'prop-types'
 
-
-class tasks extends React.Component {
+class Tasks extends React.Component {
 
     render(){
         return this.props.tasks.map(elem =>
-            <Task key = {elem.id} task={elem}/>
+            <Task 
+            metodoeliminar={this.props.metodoeliminar} 
+            checkdone={this.props.checkdone} 
+            task={elem} key = {elem.id} />
             )
     }
 }
-
-
-
-export default tasks;
+ 
+Tasks.propTypes = {
+    tasks: PropTypes.array.isRequired
+}
+ 
+export default Tasks;
